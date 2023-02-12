@@ -1,0 +1,22 @@
+.productItemsMain{
+    position: absolute;
+    top: 80px;
+    padding: 20px 20px 0 20px;
+    font-size: 14px;
+}
+
+.header{
+}
+
+.headerTitle{
+    font-weight: 700;
+}
+
+.filterHeadings{
+    padding-top: 20px;
+}
+
+.subHeader{
+    display: flex;
+    column-gap: 15px;
+}

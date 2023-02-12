@@ -1,0 +1,7 @@
+.DealOfTheDayList{
+    display: flex;
+}
+
+.DealOfTheDayList>img{
+    width: 189.9px;
+}

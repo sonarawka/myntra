@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
+
+.stamp{
+    font-family: 'Special Elite', cursive;
+
+    position: relative;
+    display: inline-block;
+    border: 1px solid green;
+    border-radius: 50%;
+    padding: 2px;
+}
+.circlelogo {
+  position: relative;
+  border: 2px double green;
+  border-radius: 50%;
+  height: 100px;
+  width:100px;
+   display: flex;
+  align-items: center;
+  justify-content:center;
+}
+.circlelogo > .order > span {
+  height: 48px;
+  position: absolute;
+  width: 20px;
+  left: 40%;
+  top: 2px;
+  transform-origin: bottom center;
+}
+.circlelogo > .order > span:nth-child(1) {
+  transform: rotate(-60deg);
+}
+.circlelogo > .order > span:nth-child(2) {
+  transform: rotate(-28deg);
+}
+.circlelogo > .order > span:nth-child(3) {
+  transform: rotate(5deg);
+}
+.circlelogo > .order > span:nth-child(4) {
+  transform: rotate(33deg);
+}
+.circlelogo > .order > span:nth-child(5) {
+  transform: rotate(62deg);
+}
+.circlelogo > .order > span:nth-child(6) {
+  transform: rotate(-75deg);
+  font-family:Arial, Helvetica, sans-serif;
+  height: 53px;
+
+
+}
+.innerStamp{
+    border: 2px solid green;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.circlelogo > .order > span:nth-child(7) {
+  transform: rotate(80deg);
+  height: 53px;
+
+  font-family: Arial, Helvetica, sans-serif
+
+}
+.completed > span {
+  height: 50px;
+  position: absolute;
+  width: 18px;
+  left: 40%;
+  bottom: 0px;
+  transform-origin: top center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.completed > span:nth-child(1) {
+  transform: rotate(65deg);
+} 
+
+  .completed>span:nth-child(2) {
+    transform: rotate(46deg);
+  }
+  .completed>span:nth-child(3) {
+    transform: rotate(26deg);
+  }
+  .completed>span:nth-child(4) {
+    transform: rotate(5deg);
+  }
+  .completed>span:nth-child(5) {
+    transform: rotate(-13deg);
+  }
+  .completed>span:nth-child(6) {
+    transform: rotate(-29deg);
+  }
+  .completed>span:nth-child(7) {
+    transform: rotate(-48deg);
+  }
+  .completed>span:nth-child(8) {
+    transform: rotate(-66deg);
+  }
+  .completed>span:nth-child(9) {
+    transform: rotate(-85deg);
+  }

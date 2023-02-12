@@ -1,0 +1,57 @@
+.nav-main{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 40px;
+    background-color: #f6f6f6;
+    z-index: 1;
+    height: 80px;
+}
+
+.nav-logo{
+    width: 53px;
+    cursor: pointer;
+}
+
+.nav-title{
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.nav-input{
+    padding:10px ;
+    width: 461px;
+}
+
+.nav-profile{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.nav-profile span{
+    font-weight: 700;
+    
+}
+
+.bagItems{
+    position: relative;
+}
+
+.bagCount{
+    position: absolute;
+    top: -6px;
+    right: -12px;
+    border-radius: 50%;
+    padding: 2px 7px;
+    background-color: tomato;
+    color: white;
+    font-size: 10px;
+}

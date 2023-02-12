@@ -1,0 +1,45 @@
+.productMain{
+    cursor: pointer;
+    width: 100%;
+}
+
+.productMain img{
+    height: 210px;
+    width: 180px;
+    object-fit: contain;
+}
+
+.description{
+    text-align: center;
+}
+
+
+
+.productBtn{
+    display: none;
+    height: 33px;
+    width: 100%;
+    border-radius: 2px;
+    border: 1px solid #d4d5d9;
+    color: #282c3f;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.productBtn:hover{
+    border:1px solid black ;
+}
+
+
+.productMain:hover .productBtn{display: flex;}
+.productMain:hover .productDesc{display: none;}
+.productMain:hover .productTitle{display: none;}
+
+.productTitle{
+    font-size: 16px;
+}

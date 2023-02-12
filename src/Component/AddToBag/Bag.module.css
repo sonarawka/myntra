@@ -1,0 +1,114 @@
+.nav-main{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+    background-color: #f6f6f6;
+    z-index: 1;
+    height: 80px;
+}
+
+.nav-logo{
+    width: 53px;
+    cursor: pointer;
+}
+
+.logoDiv{
+    margin-left: 60px;
+}
+
+.bagDesc{
+    margin-right: 60px;
+    font-size: 12px; 
+  font-weight: 600;  
+  letter-spacing: 2px;
+}
+
+.paymentSteps{
+  font-size: 12px; 
+  font-weight: 600;  
+  letter-spacing: 2px;
+}
+
+.bagMainDiv{
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+    margin:120px auto 0 auto; 
+    width:100%;
+    font-size: 14px;
+    
+}
+
+.bagMainDiv p{
+    margin-bottom: 4px;
+}
+
+.fW{
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+.bagDiv{
+    display:flex; 
+    column-gap: 8px;
+    border:1px solid #eaeaec ;
+    margin-bottom: 10px;
+    width: 600px;
+    height: 184px;
+    padding: 10px;
+}
+
+.bagImgDiv img{
+    width: 111px;
+    height: 148px;
+    object-fit: contain;
+}
+
+.crossBtn{
+    display: flex;
+    flex-grow: 1;
+    justify-content: end;
+}
+
+.qtnBtn{
+    border-radius: 5px;
+    width: 25px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 1px 2px #a5a5a5;
+    cursor: pointer;
+    user-select: none;
+}
+.qtnBtn:active {
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
+}
+
+.summaryDiv{
+    border:1px solid #eaeaec;
+    width: 336px;
+    padding: 10px;
+
+}
+
+.summaryDetails{
+    display: flex;
+    justify-content: space-between;
+}
+
+.orderBtn{
+    width: 100%;
+    border: none;
+    padding: 8px 0;
+    background-color: rgb(255,63,108);
+    color: white;
+    font-weight: 700;
+}

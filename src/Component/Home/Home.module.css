@@ -1,0 +1,11 @@
+.homeMain{
+    position: absolute;
+    top: 120px;
+}
+
+.SectionTitle{
+    font-weight: 700;
+    color: #3e4152;
+    letter-spacing: .15em;
+    padding: 50px 0px 20px 30px;
+}
