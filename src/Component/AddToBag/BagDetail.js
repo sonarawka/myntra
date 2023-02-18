@@ -8,27 +8,18 @@ const BagDetail = () => {
     const { items, totalPrice, totalQuantity}= product
     const discountPrice = (totalPrice * 0.1).toFixed()
     const checkoutHandler= async ()=>{
-        // const result = await fetch('http://localhost:4242/create-checkout-session', {
-        //     method:"POST",
-        //     headers:{
-        //         "Content-Type":"application/json"
-        //     },
-        //     body:JSON.stringify({items:product.items, email:"sona@gmail.com"})
-        // })
-        // const body = await result.json()
-        // window.location.href = body.url
+        const result = await fetch('http://localhost:4242/create-checkout-session', {
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify({items:product.items, email:"sona@gmail.com"})
+        })
+        const body = await result.json()
+        window.location.href = body.url
 
-        const result = await fetch('http://localhost:4242/webhook', {
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify({})
-    })
-    const body = await result.json()
-    window.location.href = body.url
     }
-
+    console.log(items)
     return (
         <div className={classes.bagMainDiv}>
             <div>

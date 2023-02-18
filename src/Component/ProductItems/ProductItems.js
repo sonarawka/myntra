@@ -14,7 +14,6 @@ const ProductItems = () => {
         fetchApi()
     },[])
  
-    console.log()
   return (
     <div>
         <Navbar/>

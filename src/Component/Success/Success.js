@@ -1,4 +1,3 @@
-import { textAlign } from '@mui/system'
 import React from 'react'
 import Nav from './Nav'
 import classes from './Success.module.css'
@@ -27,7 +26,7 @@ const Success = () => {
           </div>
           <p style={{ fontSize: "13px" }}><b>Note:</b> <span style={{ color: "grey" }}>We do not demand your banking and credit card details verbally or telephonically. Please do not divulge your details to fraudsters and imposters falsely claiming to be calling on Myntra's behalf.</span></p>
         </div>
-        <button onClick={() => navigate('/')} className={classes.orderBtn}>CONTINUE SHOPPING</button>
+        <button onClick={() => navigate('/orders')} className={classes.orderBtn}>GO TO ORDERS</button>
       </div>
     </div>
   )

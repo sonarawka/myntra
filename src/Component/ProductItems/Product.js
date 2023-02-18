@@ -1,16 +1,14 @@
 import React from 'react'
 import classes from './Product.module.css'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { productAction } from '../../store/product'
 
 const Product = (props) => {
   const dispatch = useDispatch()
   const {img, rate, title, desc, id, price} = props;
-  const product = useSelector(state=>state.product)
   const incrementHandler = ()=>{
     
     dispatch(productAction.addToCart({id, img, rate, title, desc, price}))
-    console.log(product)
   }
 
   

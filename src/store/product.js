@@ -31,8 +31,13 @@ const productSlice = createSlice({
 
             }
             else{
-                 state.items.filter(item=>item.id!==id)
+                 state.items = state.items.filter(item=>item.id!==id)
             }
+
+        },
+        clearItemFromCart(state,action){
+            const id = action.payload
+            state.items = state.items.filter(item=>item.id!==id)
 
         }
     }

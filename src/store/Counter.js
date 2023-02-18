@@ -12,6 +12,7 @@ const counterSlice = createSlice({
         removeFromCart(state, actions){
             state.items.filter(item=>item.id!==actions.payload)
         }
+        
     }
 })
 

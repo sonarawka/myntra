@@ -2,19 +2,13 @@ import React from 'react'
 import classes from './Bag.module.css'
 import logo from '../../Assets/myntra.png'
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { productAction } from '../../store/product';
+// import { productAction } from '../../store/product';
 
 
 const BagNav = () => {
-  const dispatch = useDispatch()
   const navigate = useNavigate()
-  const product = useSelector(state=>state.product)
 
- const removeFromCart=(id)=>{
-  dispatch(productAction.removeFromCart(id))
-  console.log(product)
- } 
+
   return (
     <div className={classes['nav-main']}>
       <div className={classes.logoDiv}>

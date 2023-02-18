@@ -1,0 +1,43 @@
+.orderlistmain{
+    margin:120px auto 0 auto; 
+    width: 60%;
+    font-size: 14px;
+    background-color: blueviolet;
+    
+}
+
+.orderslistDiv{
+    padding: 10px
+}
+
+.ordersdeliveredDiv{
+    column-gap: 10px;
+    align-items: center;
+}
+
+.orderDeliveredImg{
+    background-color: black;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.orderDeliveredImg img{
+    position: absolute;
+    top: 18px;
+    left: 18px;
+}
+
+.orderDetailsMain{
+    background-color: rgb(245,245,245);
+    width: 67%;
+}
+
+.orderDetailsDiv{
+    column-gap: 14px;
+    padding: 10px;
+}

@@ -5,10 +5,15 @@ import { useDispatch } from 'react-redux';
 import { productAction } from '../../store/product';
 
 const BagItems = (props) => {
-    const {id, img, rate, title, desc, price, totalPrice, totalQuantity, quantity, itemTotalPrice}=props
+    
+    const {id, img, rate, title, desc, price, quantity, itemTotalPrice}=props
     const dispatch =  useDispatch()
+
     const incrementHandler=()=>{dispatch(productAction.addToCart({id, img, rate, title, desc, price}))}
     const decrementHandler=()=>{dispatch(productAction.removeFromCart(id))}
+    const clearItemFromCart=(id)=>{
+        dispatch(productAction.clearItemFromCart(id))
+       } 
 
   return (
     <div className={classes.bagDiv}>
@@ -25,7 +30,7 @@ const BagItems = (props) => {
                     </div>
                     <p className={classes.fW}>Rs. {itemTotalPrice}</p>
                 </div>
-                <div className={classes.crossBtn}>
+                <div onClick={()=>clearItemFromCart(id)} className={classes.crossBtn}>
                     <CloseIcon/>
                 </div>
             </div>
