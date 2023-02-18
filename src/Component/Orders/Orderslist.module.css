@@ -2,12 +2,16 @@
     margin:120px auto 0 auto; 
     width: 60%;
     font-size: 14px;
-    background-color: blueviolet;
-    
+    background-color: rgb(245,245,245);
+    padding:15px 0;
 }
 
 .orderslistDiv{
-    padding: 10px
+    margin: 15px auto;
+    padding: 18px;
+    background-color: white;
+    width: 67%;
+
 }
 
 .ordersdeliveredDiv{
@@ -34,7 +38,6 @@
 
 .orderDetailsMain{
     background-color: rgb(245,245,245);
-    width: 67%;
 }
 
 .orderDetailsDiv{

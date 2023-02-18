@@ -4,7 +4,7 @@ import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import classes from './Navbar.module.css'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {useSelector} from 'react-redux'
 
 const Navbar = () => {
@@ -22,7 +22,16 @@ const Navbar = () => {
             <input className={classes['nav-input']} placeholder='Search for products, brand and more' />
             <div className={classes['nav-profile']}>
                 <PermIdentityIcon sx={{color:"#575b69"}}/>
-                <span>Profile</span>
+                <div className="dropdown">
+                <button className={`${classes.dropdownBtn}`} type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Profile
+                </button>
+                <ul className="dropdown-menu">
+                    <li><Link className="dropdown-item" to="/login">Login</Link></li>
+                    <li><Link className="dropdown-item" to="/orders">Orders</Link></li>
+                    {/* <li><a className="dropdown-item" href="/">Something else here</a></li> */}
+                </ul>
+                </div>
             </div>
             <div className={classes['nav-profile']}>
                 <FavoriteBorderIcon sx={{color:"#575b69"}}/>

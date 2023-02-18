@@ -52,7 +52,7 @@ const MyOrders = () => {
     <div>
         <Navbar/>
         <div className={classes.orderlistmain}>
-    </div>
+    
         { orderDetails &&  orderDetails.map((e)=>e.images.map((image, i)=><Orderslist
         image={image}
         key={e.id+i}
@@ -65,6 +65,7 @@ const MyOrders = () => {
         />
       
         ))}
+        </div>
     </div>
   )
 }
