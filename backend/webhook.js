@@ -14,7 +14,6 @@ const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY);
 const endpointSecret = process.env.STRIPE_SIGNING_SECRET;
 
 const fulfillOrder = async (session)=>{
-    // console.log('Fulfilling order', session)
 
     return app
     .firestore()
@@ -31,7 +30,8 @@ const fulfillOrder = async (session)=>{
         payment_status:session.payment_status,
         shipping_details:session.shipping_details,
         images: JSON.parse(session.metadata.images),
-        timestamp: admin.firestore.FieldValue.serverTimestamp()
+        timestamp: admin.firestore.FieldValue.serverTimestamp(),
+        description:JSON.parse(session.metadata.desc)
     })
     .then(()=>{
         console.log(`SUCCESS: Order ${session.id} has been added to the DB`)

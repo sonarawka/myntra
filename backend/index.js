@@ -8,6 +8,7 @@ app.use(express.json({verify: (req,res,buf) => { req.rawBody = buf }}));
 
 app.use('/api', require('./webhook'))
 app.post('/create-checkout-session', async (req, res) => {
+  
   const {items, email}=req.body
   const transformedItem = items.map((e)=>({
     price_data: {
@@ -53,7 +54,10 @@ app.post('/create-checkout-session', async (req, res) => {
     cancel_url: 'http://localhost:3000/cancel',
     metadata:{
       email:email,
-      images:JSON.stringify(items.map(e=>e.img))
+      images:JSON.stringify(items.map(e=>e.img)),
+      desc:JSON.stringify(items.map(e=>e.desc.slice(0,40)))
+
+
     }
   });
   // res.status(200)

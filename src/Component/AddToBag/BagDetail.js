@@ -19,7 +19,6 @@ const BagDetail = () => {
         window.location.href = body.url
 
     }
-    console.log(items)
     return (
         <div className={classes.bagMainDiv}>
             <div>

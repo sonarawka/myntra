@@ -14,19 +14,6 @@ const MyOrders = () => {
         const orderRef = collection(db, "users", session, "orders");
         const result = await getDocs(query(orderRef, orderBy("timestamp", "desc")))
 
-        // const orders = await Promise.all(
-        //     stripeOrders.docs.map(async (order)=>({
-        //       id:order.id,
-        //       amount:order.data().amount_total,
-        //       amountShipping:order.data().amount_shipping,
-        //       images:order.data().images,
-        //       timestamp:moment(order.data().timestamp.toDate()).unix(),
-        //       items: (
-        //         await stripe.checkout.sessions.listLineItems(order.id,{limit:100})
-        //       ).data
-        //     }))
-        //   )
-
         const order = await Promise.all(
             result.docs.map(async (e)=>({
                 id:e.id,
@@ -34,7 +21,8 @@ const MyOrders = () => {
                 amountShipping:e.data().amount_shipping,
                 images:e.data().images,
                 timestamp:moment(e.data().timestamp.toDate()).unix(),
-                items: await stripe.checkout.sessions.listLineItems(e.id, {limit:100}).data
+                items: await stripe.checkout.sessions.listLineItems(e.id, {limit:100}),
+                desc:e.data().description
     })))
       
         setOrder(order)
@@ -47,23 +35,36 @@ const MyOrders = () => {
     }, [])
     
    
-
+   const orderDetails= order && order.map((e)=>{return (
+            {
+            id:e.id,
+            amount:e.amount,
+            amountShipping:e.amountShipping,
+            images:e.images,
+            timestamp:e.timestamp,
+            items:e.items,
+            desc:e.desc
+        }
+        )})
+   
+   
   return (
     <div>
         <Navbar/>
-        <div className={classes.orderlistmain}>{order && order.map((e)=>(
-            <Orderslist
-            key={e.id}
-            id={e.id}
-            amount={e.amount}
-            amountShipping={e.amountShipping}
-            images={e.images}
-            timestamp={e.timestamp}
-            />
-        
-        ))}
+        <div className={classes.orderlistmain}>
     </div>
-
+        { orderDetails &&  orderDetails.map((e)=>e.images.map((image, i)=><Orderslist
+        image={image}
+        key={e.id+i}
+        id={e.id}
+        amount={e.amount}
+        amountShipping={e.amountShipping}
+        timestamp={e.timestamp}
+        items={e.items.data[i]}
+        desc={e.desc[i]}
+        />
+      
+        ))}
     </div>
   )
 }

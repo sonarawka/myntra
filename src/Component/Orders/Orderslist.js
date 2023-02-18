@@ -2,7 +2,7 @@ import moment from 'moment/moment';
 import React from 'react'
 import classes from './Orderslist.module.css'
 const Orderslist = (props) => {
-    const { images, timestamp } = props;
+    const { image, timestamp, items, desc } = props;
     return (
         <div className={classes.orderslistDiv}>
             <div className={`d-flex ${classes.ordersdeliveredDiv}`}>
@@ -22,17 +22,17 @@ const Orderslist = (props) => {
             <div className={classes.orderDetailsMain}>
             <div className={`d-flex ${classes.orderDetailsDiv}`}>
                 <div>
-                    <img width="53px" height="70px" src={images} alt='' />
+                    <img width="53px" height="70px" src={image} alt='' />
                 </div>
                 <div>
                     <div>
-                        <b>Roadster</b>
+                        <b>{items.description}</b>
                     </div>
                     <div>
-                        The Lifestyle Co Men Charcoal Grey Black Colourblocked Polo Collar Pure Cotton T-shirt
+                        {desc}
                     </div>
                     <div>
-                        Size: L
+                        Price: ₹{(items.price.unit_amount)*(items.quantity)/100}
                     </div>
                 </div>
             </div>
