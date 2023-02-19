@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { loggedInAction } from '../../store/loggedIn'
 import Navbar from '../Navbar'
 import BestOfBrands from './BestOfBrands'
 import Carousel from './Carousel'
@@ -10,7 +12,14 @@ import classes from './Home.module.css'
 import TopPicks from './TopPicks'
 const Home = () => {
   const navigate = useNavigate()
+  const dispatch = useDispatch()
   
+  useEffect(() => {
+    if(localStorage.getItem("email")){
+       dispatch(loggedInAction.loggedIn())
+    }
+ // eslint-disable-next-line react-hooks/exhaustive-deps
+ }, [])
   return (
     <div>
         <Navbar/>

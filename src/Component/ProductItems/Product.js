@@ -1,14 +1,22 @@
 import React from 'react'
 import classes from './Product.module.css'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { productAction } from '../../store/product'
+import { useNavigate } from 'react-router-dom'
 
 const Product = (props) => {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const {img, rate, title, desc, id, price} = props;
+  const loggedIn =useSelector(state=>state.loggedIn)
   const incrementHandler = ()=>{
     
-    dispatch(productAction.addToCart({id, img, rate, title, desc, price}))
+    if(loggedIn.isloggedIn){
+        dispatch(productAction.addToCart({id, img, rate, title, desc, price}))
+    }
+    else{
+      navigate('/login')
+    }
   }
 
   

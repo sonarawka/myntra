@@ -5,11 +5,20 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import classes from './Navbar.module.css'
 import { Link, useNavigate } from 'react-router-dom';
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import { loggedInAction } from '../store/loggedIn';
 
 const Navbar = () => {
     const product = useSelector(state=>state.product)
+    const loggedIn = useSelector(state=>state.loggedIn)
     const navigate = useNavigate()
+    const dispatch = useDispatch()
+    const logoutHandler=()=>{
+        localStorage.clear()
+        dispatch(loggedInAction.logout())
+
+    }
+
     return (
         <div className={classes['nav-main']}>
             <img alt='' className={classes['nav-logo']} src={logo} onClick={()=>navigate('/')}/>
@@ -27,8 +36,10 @@ const Navbar = () => {
                 Profile
                 </button>
                 <ul className="dropdown-menu">
-                    <li><Link className="dropdown-item" to="/login">Login</Link></li>
-                    <li><Link className="dropdown-item" to="/orders">Orders</Link></li>
+                    {!loggedIn.isloggedIn &&<li><Link className="dropdown-item" to="/login">Login</Link></li>}
+                    {loggedIn.isloggedIn && <li><div className="dropdown-item"><b>Hello {localStorage.getItem("username").split(" ")[0]}</b></div></li>}
+                    {loggedIn.isloggedIn &&<li><div onClick={logoutHandler} className="dropdown-item">Logout</div></li>}
+                    {loggedIn.isloggedIn &&<li><Link className="dropdown-item" to="/orders">Orders</Link></li>}
                     {/* <li><a className="dropdown-item" href="/">Something else here</a></li> */}
                 </ul>
                 </div>
@@ -40,7 +51,7 @@ const Navbar = () => {
             <div className={`${classes['nav-profile']} ${classes.bagItems}`} onClick={()=>navigate('/checkout/cart')}>
                 <WorkOutlineIcon sx={{color:"#575b69"}}/>
                 <span>Bag</span>
-                <span className={classes.bagCount}>{product.totalQuantity}</span>
+                {loggedIn.isloggedIn && <span className={classes.bagCount}>{product.totalQuantity}</span>}
                 
             </div>
         </div>
