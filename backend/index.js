@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const stripe = require('stripe')('sk_test_51MZHIfSIynhd8VcpEAe4dHhq3iSKXhZnlR4QMMOxgrmejLFlc6UX4Zv8RmnwFS0TLYZf6x60r0gUOvAQkUQ4J3JV00zhYbmHZN')
+const PORT = process.env.PORT || 4242;
 
 app.use(cors())
 app.use(express.json({verify: (req,res,buf) => { req.rawBody = buf }}));
@@ -64,4 +65,6 @@ app.post('/create-checkout-session', async (req, res) => {
   res.json({url: session.url})
 });
 
-app.listen(4242, () => console.log(`Listening on port ${4242}!`));
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
+});
