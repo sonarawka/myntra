@@ -51,8 +51,8 @@ app.post('/create-checkout-session', async (req, res) => {
   ],
     line_items:transformedItem ,
     mode: 'payment',
-    success_url: 'http://localhost:3000/success',
-    cancel_url: 'http://localhost:3000/cancel',
+    success_url: 'https://myntrav2.netlify.app/success',
+    cancel_url: 'https://myntrav2.netlify.app/cancel',
     metadata:{
       email:email,
       images:JSON.stringify(items.map(e=>e.img)),
