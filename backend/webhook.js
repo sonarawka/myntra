@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const admin = require('firebase-admin')
-
+require('dotenv').config();
 // secure a connection to Firebase from the backend
 const serviceAccount = require('../permissions.json')
 const app = !admin.apps.length ? admin.initializeApp({
