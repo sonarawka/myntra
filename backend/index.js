@@ -1,7 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const stripe = require('stripe')('sk_test_51MZHIfSIynhd8VcpEAe4dHhq3iSKXhZnlR4QMMOxgrmejLFlc6UX4Zv8RmnwFS0TLYZf6x60r0gUOvAQkUQ4J3JV00zhYbmHZN')
+require('dotenv').config();
+const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 const PORT = process.env.PORT || 4242;
 
 app.use(cors())

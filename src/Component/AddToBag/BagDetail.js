@@ -8,6 +8,7 @@ const BagDetail = () => {
     const { items, totalPrice, totalQuantity}= product
     const discountPrice = (totalPrice * 0.1).toFixed()
     const checkoutHandler= async ()=>{
+        console.log("called")
         const result = await fetch('https://myntrav2.onrender.com/create-checkout-session', {
             method:"POST",
             headers:{
