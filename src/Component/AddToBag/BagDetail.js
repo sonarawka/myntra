@@ -3,13 +3,15 @@ import classes from './Bag.module.css'
 import { useSelector } from 'react-redux';
 import BagItems from './BagItems';
 
+const host = process.env.REACT_APP_HOST
+
 const BagDetail = () => {
     const product = useSelector(state=>state.product)
     const { items, totalPrice, totalQuantity}= product
     const discountPrice = (totalPrice * 0.1).toFixed()
     const checkoutHandler= async ()=>{
-        console.log("called")
-        const result = await fetch('https://myntrav2.onrender.com/create-checkout-session', {
+        console.log("called", host)
+        const result = await fetch(`${host}/create-checkout-session`, {
             method:"POST",
             headers:{
                 "Content-Type":"application/json"

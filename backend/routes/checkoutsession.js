@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
 
-router.post('/create-checkout-session', async (req, res) => {
+router.post('', async (req, res) => {
   
     const {items, email}=req.body
     const transformedItem = items.map((e)=>({
