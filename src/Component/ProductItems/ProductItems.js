@@ -2,16 +2,37 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar'
 import Product from './Product'
 import classes from './ProductItems.module.css'
+const host = process.env.REACT_APP_HOST
+
 
 const ProductItems = () => {
     const [product, setProduct] = useState()
-    const fetchApi = () => {
-        fetch('https://fakestoreapi.com/products')
-        .then(res=>res.json())
-        .then(json=>setProduct(json))
-    }
+    const [productItems, setproductItems] = useState()
+    // const fetchApi = () => {
+    //     fetch('https://fakestoreapi.com/products')
+    //     .then(res=>res.json())
+    //     .then(json=>setProduct(json))
+    // }
+
+    const getProduct = async()=>{
+        const response = await fetch(`${host}/api/products/getProducts`, {
+          method: 'GET', // *GET, POST, PUT, DELETE, etc.
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          
+          
+        });
+        const data= await response.json();
+        setproductItems(data)
+      
+      }
+    //   productItems.products && productItems.products.map((e)=>console.log(e))
+    console.log(productItems.products)
+    
     useEffect(()=>{
         fetchApi()
+        getProduct()
     },[])
  
   return (
