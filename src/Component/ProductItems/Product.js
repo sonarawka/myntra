@@ -22,7 +22,7 @@ const Product = (props) => {
   
   return (
     <div className={`card ${classes.productMain} col-md-3 m-3`} style={{width: "210px"}}>
-      <img src={img} className="card-img-top" alt="..."/>
+      <img src={img[0]} className="card-img-top" alt="..."/>
       <div className="card-body">
         <div>
           <p className='m-0'>{rate}</p>

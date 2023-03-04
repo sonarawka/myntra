@@ -19,8 +19,16 @@ router.post('/addProducts', async(req, res)=>{
 
 })
 
-router.get('/getProducts', async(req, res)=>{
-    try {const products=await Products.find({})
+router.get('/getProducts/:page', async(req, res)=>{
+    let page=1;
+    if(req.params.page){
+        page=parseInt(req.params.page)
+    }
+    
+
+    const skip =(page-1)*30
+
+    try {const products=await Products.find({}).skip(skip).limit(30)
 
     res.json({products})}
     catch (error){

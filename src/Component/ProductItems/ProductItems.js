@@ -1,3 +1,4 @@
+import { Pagination } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import Navbar from '../Navbar'
 import Product from './Product'
@@ -6,34 +7,22 @@ const host = process.env.REACT_APP_HOST
 
 
 const ProductItems = () => {
-    const [product, setProduct] = useState()
     const [productItems, setproductItems] = useState()
-    // const fetchApi = () => {
-    //     fetch('https://fakestoreapi.com/products')
-    //     .then(res=>res.json())
-    //     .then(json=>setProduct(json))
-    // }
-
+    const [pageNo, setPageNo] = useState(1)
+    const HandleChange=(event, page)=>{
+        setPageNo(page)
+    }
     const getProduct = async()=>{
-        const response = await fetch(`${host}/api/products/getProducts`, {
-          method: 'GET', // *GET, POST, PUT, DELETE, etc.
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          
-          
-        });
+        const response = await fetch(`${host}/api/products/getProducts/${pageNo}`);
         const data= await response.json();
-        setproductItems(data)
+        
+        setproductItems(data.products)
       
       }
-    //   productItems.products && productItems.products.map((e)=>console.log(e))
-    console.log(productItems.products)
-    
+    console.log(productItems)
     useEffect(()=>{
-        fetchApi()
         getProduct()
-    },[])
+    },[pageNo])
  
   return (
     <div>
@@ -113,21 +102,27 @@ const ProductItems = () => {
                     </div>
                 </div>
                 <div className='row'>
-                {product && product.map((e)=>{
+                {productItems && productItems.map((e)=>{
                     return(
                         <Product 
                             id={e.id}
                             key={e.id}
+                            title={e.name}
                             img={e.image} 
-                            rate={e.rating.rate} 
+                            price={e.price}
+                            discountPrice={e.discountPrice}
+                            rate={e.rate} 
                             count={e.count}
-                            title={e.title} 
+                            brand={e.brand}
+                            specifications={e.specifications}
                             desc={e.description}
-                            price={Math.round(e.price)}
                             />
                     )
-                })}</div>
-                
+                })}
+                </div>
+                <div className={classes.paginationBtn}>
+                    <Pagination onChange={HandleChange} count={10} variant="outlined" shape="rounded" />
+                </div>
             </div>
             
             </div>
