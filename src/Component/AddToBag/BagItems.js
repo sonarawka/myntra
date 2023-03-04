@@ -6,10 +6,10 @@ import { productAction } from '../../store/product';
 
 const BagItems = (props) => {
     
-    const {id, img, rate, title, desc, price, quantity, itemTotalPrice}=props
+    const {id, img, rate, title, desc, price, quantity, itemTotalPrice, discountPrice}=props
     const dispatch =  useDispatch()
 
-    const incrementHandler=()=>{dispatch(productAction.addToCart({id, img, rate, title, desc, price}))}
+    const incrementHandler=()=>{dispatch(productAction.addToCart({id, img, rate, title, desc, price, discountPrice}))}
     const decrementHandler=()=>{dispatch(productAction.removeFromCart(id))}
     const clearItemFromCart=(id)=>{
         dispatch(productAction.clearItemFromCart(id))

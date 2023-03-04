@@ -7,12 +7,12 @@ import { useNavigate } from 'react-router-dom'
 const Product = (props) => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const {img, rate, title, desc, id, price} = props;
+  const {img, rate, title, desc, id, price, discountPrice, count, brand} = props;
   const loggedIn =useSelector(state=>state.loggedIn)
   const incrementHandler = ()=>{
     
     if(loggedIn.isloggedIn){
-        dispatch(productAction.addToCart({id, img, rate, title, desc, price}))
+        dispatch(productAction.addToCart({id, img:img[0], rate, title, desc, price, discountPrice, count, brand}))
     }
     else{
       navigate('/login')
@@ -22,7 +22,12 @@ const Product = (props) => {
   
   return (
     <div className={`card ${classes.productMain} col-md-3 m-3`} style={{width: "210px"}}>
-      <img src={img[0]} className="card-img-top" alt="..."/>
+      <img src={img[0]} className="card-img-top" 
+      onError={({ currentTarget }) => {
+        currentTarget.onerror = null; // prevents looping
+        currentTarget.src="https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg";
+      }}
+      alt={title}/>
       <div className="card-body">
         <div>
           <p className='m-0'>{rate}</p>

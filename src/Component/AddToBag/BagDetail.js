@@ -7,8 +7,7 @@ const host = process.env.REACT_APP_HOST
 
 const BagDetail = () => {
     const product = useSelector(state=>state.product)
-    const { items, totalPrice, totalQuantity}= product
-    const discountPrice = (totalPrice * 0.1).toFixed()
+    const { items, totalPrice, totalQuantity, discount}= product
     const checkoutHandler= async ()=>{
         console.log("called", host)
         const result = await fetch(`${host}/create-checkout-session`, {
@@ -16,7 +15,7 @@ const BagDetail = () => {
             headers:{
                 "Content-Type":"application/json"
             },
-            body:JSON.stringify({items:product.items, email:"sona@gmail.com"})
+            body:JSON.stringify({items:items, email:"sona@gmail.com"})
         })
         const body = await result.json()
         window.location.href = body.url
@@ -25,7 +24,7 @@ const BagDetail = () => {
     return (
         <div className={classes.bagMainDiv}>
             <div>
-            {items && items.map((e)=><BagItems id={e.id} img={e.img} rate={e.rate} title={e.title} desc={e.desc} price={e.price} quantity={e.quantity} itemTotalPrice={e.totalPrice} totalPrice={totalPrice} totalQuantity={totalQuantity} key={e.id}/>)}
+            {items && items.map((e)=><BagItems id={e.id} img={e.img} rate={e.rate} title={e.title} desc={e.desc} price={e.price} quantity={e.quantity} discountPrice={e.discountPrice} itemTotalPrice={e.totalPrice} totalPrice={totalPrice} totalQuantity={totalQuantity} key={e.id}/>)}
             </div>
 
 
@@ -37,7 +36,7 @@ const BagDetail = () => {
                 </div>
                 <div className={classes.summaryDetails}>
                     <p>Discount on MRP</p>
-                    <p style={{color:"rgb(20,205,168)"}}>-Rs. {discountPrice}</p>
+                    <p style={{color:"rgb(20,205,168)"}}>-Rs. {discount}</p>
                 </div>
                 <div className={classes.summaryDetails}>
                     <p>Coupon Discount</p>
@@ -50,7 +49,7 @@ const BagDetail = () => {
                 <hr/>
                 <div className={classes.summaryDetails} style={{fontWeight:"700"}}>
                     <p>Total Amount</p>
-                    <p>Rs. {`${totalPrice-discountPrice}`}</p>
+                    <p>Rs. {`${totalPrice-discount}`}</p>
                 </div>
                 <button onClick={checkoutHandler} className={classes.orderBtn}>PLACE ORDER</button>
             </div>

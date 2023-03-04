@@ -16,12 +16,12 @@ const ProductItems = () => {
         const response = await fetch(`${host}/api/products/getProducts/${pageNo}`);
         const data= await response.json();
         
-        setproductItems(data.products)
+        setproductItems(data)
       
       }
-    console.log(productItems)
     useEffect(()=>{
         getProduct()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[pageNo])
  
   return (
@@ -30,7 +30,7 @@ const ProductItems = () => {
         <div className={classes.productItemsMain}>
         <div className={classes.header}>
             <p>Home / <span className={classes.headerTitle}>Women Accessories</span></p>
-            <p><b>Women Accessories</b> - 274955 items</p>
+            <p><b>Women Accessories</b> - {productItems && productItems.total_results} items</p>
         </div>
         <div className='row'>
             <div className='col-md-2 '>
@@ -102,14 +102,14 @@ const ProductItems = () => {
                     </div>
                 </div>
                 <div className='row'>
-                {productItems && productItems.map((e)=>{
+                {productItems && productItems.products.map((e)=>{
                     return(
                         <Product 
-                            id={e.id}
-                            key={e.id}
+                            id={e._id}
+                            key={e._id}
                             title={e.name}
                             img={e.image} 
-                            price={e.price}
+                            price={+e.price}
                             discountPrice={e.discountPrice}
                             rate={e.rate} 
                             count={e.count}
@@ -120,9 +120,9 @@ const ProductItems = () => {
                     )
                 })}
                 </div>
-                <div className={classes.paginationBtn}>
-                    <Pagination onChange={HandleChange} count={10} variant="outlined" shape="rounded" />
-                </div>
+                {productItems && <div className={classes.paginationBtn}>
+                    <Pagination onChange={HandleChange} count={productItems.total_pages} variant="outlined" shape="rounded" />
+                </div>}
             </div>
             
             </div>
