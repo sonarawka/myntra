@@ -28,7 +28,7 @@ const BagDetail = () => {
             </div>
 
 
-            <div className={classes.summaryDiv}>
+            {items.length!==0 && <div className={classes.summaryDiv}>
                 <p style={{fontWeight:"600", fontSize:"12px"}}>PRICE DETAILS ({items.length} items)</p>
                 <div className={classes.summaryDetails}>
                     <p>Total Price</p>
@@ -52,7 +52,13 @@ const BagDetail = () => {
                     <p>Rs. {`${totalPrice-discount}`}</p>
                 </div>
                 <button onClick={checkoutHandler} className={classes.orderBtn}>PLACE ORDER</button>
-            </div>
+            </div>}
+            {items.length===0 && <div className={classes.noItemInBag}>
+                <img src='https://constant.myntassets.com/checkout/assets/img/empty-bag.webp' alt=''/>
+                <h5>Hey, it feels so light!</h5>
+                <p>There is nothing in your bag. Let's add some items.</p>
+                <button>ADD ITEMS FROM WISHLIST</button>
+                </div>}
         </div>
     )
 }
