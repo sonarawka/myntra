@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './Bag.module.css'
 import { useSelector } from 'react-redux';
 import BagItems from './BagItems';
+import { Link } from 'react-router-dom';
 
 const host = process.env.REACT_APP_HOST
 
 const BagDetail = () => {
     const product = useSelector(state=>state.product)
+    const [wishlistToggle, setWishlistToggle] = useState(false)
+    const loggedIn = useSelector(state=>state.loggedIn)
     const { items, totalPrice, totalQuantity, discount}= product
     const checkoutHandler= async ()=>{
         console.log("called", host)
@@ -20,6 +23,10 @@ const BagDetail = () => {
         const body = await result.json()
         window.location.href = body.url
 
+    }
+
+    const addItemsHandler=()=>{
+        setWishlistToggle(true)
     }
     return (
         <div className={classes.bagMainDiv}>
@@ -53,11 +60,18 @@ const BagDetail = () => {
                 </div>
                 <button onClick={checkoutHandler} className={classes.orderBtn}>PLACE ORDER</button>
             </div>}
-            {items.length===0 && <div className={classes.noItemInBag}>
+            {items.length===0 && !wishlistToggle && <div className={classes.noItemInBag}>
                 <img src='https://constant.myntassets.com/checkout/assets/img/empty-bag.webp' alt=''/>
                 <h5>Hey, it feels so light!</h5>
                 <p>There is nothing in your bag. Let's add some items.</p>
-                <button>ADD ITEMS FROM WISHLIST</button>
+                <button onClick={addItemsHandler}>ADD ITEMS FROM WISHLIST</button>
+                </div>}
+
+            {wishlistToggle && !loggedIn.isloggedIn && <div className={classes.wishlist}>
+                <b>PLEASE LOG IN</b>
+                <p>Login to view items in your wishlist.</p>
+                <div className={classes["wishlistLogin-icon"]}></div>
+                <Link to="/login"><button>LOGIN</button></Link>
                 </div>}
         </div>
     )
