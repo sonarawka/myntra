@@ -14,8 +14,8 @@ const ProductItems = () => {
     }
     const getProduct = async()=>{
         const response = await fetch(`${host}/api/products/getProducts/${pageNo}`);
+
         const data= await response.json();
-        
         setproductItems(data)
       
       }

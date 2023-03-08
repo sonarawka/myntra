@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import Navbar from '../Navbar'
 import BagDetail from './BagDetail'
 import BagNav from './BagNav'
 

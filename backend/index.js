@@ -10,9 +10,9 @@ app.use(cors())
 app.use(express.json({verify: (req,res,buf) => { req.rawBody = buf }}));
 
 app.use('/api', require('./routes/webhook'))
-app.use('/api/products', require('./routes/product'))
+app.use('/api/products', require('./routes/product')) 
 app.use('/create-checkout-session', require('./routes/checkoutsession'))
 
 app.listen(PORT, () => {
   console.log(`server started on port ${PORT}`);
-});
+}); 

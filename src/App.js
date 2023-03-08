@@ -8,6 +8,7 @@ import Success from './Component/Success/Success'
 import Cancel from './Component/Cancel/Cancel'
 import MyOrders from './Component/Orders/MyOrders'
 import Login from './Component/Login/Login'
+import WishList from './Component/WishList'
 
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/cancel" element={<Cancel />} />
         <Route path="/orders" element={<MyOrders />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/wishlist" element={<WishList />} />
       </Routes>      
     </BrowserRouter>
   )

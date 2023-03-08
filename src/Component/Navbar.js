@@ -44,7 +44,7 @@ const Navbar = () => {
                 </ul>
                 </div>
             </div>
-            <div className={classes['nav-profile']}>
+            <div className={classes['nav-profile']} onClick={()=>navigate('/wishlist')}>
                 <FavoriteBorderIcon sx={{color:"#575b69"}}/>
                 <span>Wishlist</span>
             </div>

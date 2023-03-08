@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router()
 const Products = require('../models/Products')
-
+ 
 router.post('/addProducts', async(req, res)=>{
     const results = req.body.results
     try {results.forEach(async(e) => {
@@ -18,7 +18,7 @@ router.post('/addProducts', async(req, res)=>{
     }
 
 })
-
+ 
 router.get('/getProducts/:page', async(req, res)=>{
     let page=1;
     if(req.params.page){

@@ -1,10 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY)
+const stripe = require('stripe')(process.env.STRIPE_PRIVATE_KEY, {
+  maxNetworkRetries: 3,
+  timeout: 4000,
+  telemetry: false,
+})
 
 router.post('', async (req, res) => {
   
     const {items, email}=req.body
+    console.log("items v2",items,process.env.STRIPE_PRIVATE_KEY)
+    
     const transformedItem = items.map((e)=>({
       price_data: {
         currency: 'inr',
@@ -49,8 +55,8 @@ router.post('', async (req, res) => {
       cancel_url: 'https://myntrav2.netlify.app/cancel',
       metadata:{
         email:email,
-        images:JSON.stringify(items.map(e=>e.img)),
-        desc:JSON.stringify(items.map(e=>e.desc.slice(0,40)))
+        // images:JSON.stringify(items.map(e=>e.img)),
+        // desc:JSON.stringify(items.map(e=>e.desc.slice(0,40)))
   
   
       }
