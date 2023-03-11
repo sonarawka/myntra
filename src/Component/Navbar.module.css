@@ -9,7 +9,10 @@
     background-color: #f6f6f6;
     z-index: 1;
     height: 80px;
+    padding: 15px;
 }
+
+
 
 .nav-logo{
     width: 53px;
@@ -41,7 +44,9 @@
     font-weight: 700;
     
 }
-
+.menu{
+    display: none;
+}
 .dropdownBtn{
     outline: none;
     border: none;
@@ -63,3 +68,20 @@
     font-size: 10px;
 }
 
+@media only screen and (max-width:1140px){
+    .nav-input{
+        display: none;
+    }
+}
+
+@media only screen and (max-width:850px){
+    .nav-title, .nav-profile{
+        display: none;
+    }
+    .nav-main{
+        justify-content: space-between;
+    }
+    .menu{
+        display: flex;
+    }
+}

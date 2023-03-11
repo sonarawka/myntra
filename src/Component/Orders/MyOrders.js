@@ -5,9 +5,14 @@ import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import moment from 'moment/moment';
 import Orderslist from './Orderslist';
 import classes from './Orderslist.module.css'
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 const stripe = require('stripe')(process.env.REACT_APP_STRIPE_PRIVATE_KEY);
 
 const MyOrders = () => {
+    const loggedIn = useSelector(state=>state.loggedIn)
+    const navigate=useNavigate()
+
     const [order, setOrder] = useState()
     const fetchDataHandler = async ()=>{
         const session = "sona@gmail.com"
@@ -31,8 +36,11 @@ const MyOrders = () => {
     
     useEffect(() => {
         fetchDataHandler()
+        if(!loggedIn.isloggedIn){
+            navigate('/login')
+        }
 
-    }, [])
+    }, [loggedIn])
     
    
    const orderDetails= order && order.map((e)=>{return (
@@ -51,7 +59,7 @@ const MyOrders = () => {
   return (
     <div>
         <Navbar/>
-        <div className={classes.orderlistmain}>
+        {loggedIn.isloggedIn && <div className={classes.orderlistmain}>
     
         { orderDetails &&  orderDetails.map((e)=>e.images.map((image, i)=><Orderslist
         image={image}
@@ -65,7 +73,7 @@ const MyOrders = () => {
         />
       
         ))}
-        </div>
+        </div>}
     </div>
   )
 }
