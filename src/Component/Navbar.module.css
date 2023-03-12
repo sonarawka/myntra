@@ -40,14 +40,26 @@
 .sidebarBody::-webkit-scrollbar {
     display: none;
 }
-.sidebarBody p{
+
+.modelImage{
+    position: relative;
+}
+
+.modelImage>button{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px;
+}
+
+.topMenuContainer>p{
     padding:14px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.sidebarBody div{
+.bottomMenuContainer>div{
     font-size: 14px;
     padding:14px 20px;
     font-weight: 300;
@@ -154,4 +166,6 @@
         display: inline-block;
     }
 }
+
+
 

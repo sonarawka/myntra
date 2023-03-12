@@ -12,3 +12,9 @@
 .offcanvas-body{
     padding: 0;
 }
+
+@media only screen and (max-width:500px){
+    .offcanvas{
+       width: 75% !important;
+    }
+ }
