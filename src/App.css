@@ -2,3 +2,13 @@
     display: none;
     content: "";
 }
+/* .offcanvas{
+    width: 60% !important;
+} */
+.offcanvas-header{
+    padding: 0;
+}
+
+.offcanvas-body{
+    padding: 0;
+}

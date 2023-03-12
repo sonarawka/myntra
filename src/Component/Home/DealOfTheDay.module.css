@@ -1,7 +1,13 @@
 .DealOfTheDayList{
     display: flex;
-}
 
+
+}
+.DealOfTheDayMain{
+    white-space: nowrap;
+    overflow: scroll;
+}
 .DealOfTheDayList>img{
     width: 189.9px;
+    display: inline-block;
 }
