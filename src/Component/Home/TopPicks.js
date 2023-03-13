@@ -12,16 +12,17 @@ import img7 from './../../Assets/toppicks/7.jpg'
 const TopPicks = () => {
   return (
     <div>
-        <h4 className={sectionTitle.SectionTitle}>TOP PICKS</h4>
-        <div className={classes.TopPicksList}>
-            <img src={img1} alt=''/>
-            <img src={img2} alt=''/>
-            <img src={img3} alt=''/>
-            <img src={img4} alt=''/>
-            <img src={img5} alt=''/>
-            <img src={img6} alt=''/>
-            <img src={img7} alt=''/>
-        </div>
+      <h4 className={sectionTitle.SectionTitle}>TOP PICKS</h4>
+      <div className={classes.TopPicksList}>
+        <div className={` row ${classes.TopPicksListItem}`} style={{ backgroundImage: `url(${img1})` }}></div>
+        <div className={` row ${classes.TopPicksListItem}`} style={{ backgroundImage: `url(${img2})` }}></div>
+        <div className={` row ${classes.TopPicksListItem}`} style={{ backgroundImage: `url(${img3})` }}></div>
+        <div className={` row ${classes.TopPicksListItem}`} style={{ backgroundImage: `url(${img4})` }}></div>
+        <div className={` row ${classes.TopPicksListItem}`} style={{ backgroundImage: `url(${img5})` }}></div>
+        <div className={` row ${classes.TopPicksListItem}`} style={{ backgroundImage: `url(${img6})` }}></div>
+        <div className={` row ${classes.TopPicksListItem}`} style={{ backgroundImage: `url(${img7})` }}></div>
+      </div>
+      
     </div>
   )
 }

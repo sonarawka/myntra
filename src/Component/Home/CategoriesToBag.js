@@ -32,34 +32,35 @@ const CategoriesToBag = () => {
     <div>
         <h4 className={sectionTitle.SectionTitle}>CATEGORIES TO BAG</h4>
         <div className={classes.CategoriesToBagList}>
-            <img src={img1} alt=''/>
-            <img src={img2} alt=''/>
-            <img src={img3} alt=''/>
-            <img src={img4} alt=''/>
-            <img src={img5} alt=''/>
-            <img src={img6} alt=''/>
-            <img src={img7} alt=''/>
-            <img src={img8} alt=''/>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img1})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img2})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img3})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img4})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img5})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img6})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img7})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img8})`}}></div>
         </div>
         <div className={classes.CategoriesToBagList}>
-            <img src={img9} alt=''/>
-            <img src={img10} alt=''/>
-            <img src={img11} alt=''/>
-            <img src={img12} alt=''/>
-            <img src={img13} alt=''/>
-            <img src={img14} alt=''/>
-            <img src={img15} alt=''/>
-            <img src={img16} alt=''/>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img9})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img10})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img11})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img12})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img13})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img14})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img15})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img16})`}}></div>
         </div>
+        
         <div className={classes.CategoriesToBagList}>
-            <img src={img17} alt=''/>
-            <img src={img18} alt=''/>
-            <img src={img19} alt=''/>
-            <img src={img20} alt=''/>
-            <img src={img21} alt=''/>
-            <img src={img22} alt=''/>
-            <img src={img23} alt=''/>
-            <img src={img24} alt=''/>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img17})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img18})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img19})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img20})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img21})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img22})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img23})`}}></div>
+            <div className={` row ${classes.CategoriesToBagListItem}`} style={{backgroundImage:`url(${img24})`}}></div>
         </div>
     </div>
   )

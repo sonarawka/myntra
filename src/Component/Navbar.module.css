@@ -41,6 +41,17 @@
     display: none;
 }
 
+.loggedInModelImage{
+    height: 128px;
+    background-color: #3f3947;
+}
+
+.profileIcon{
+    background-color: #f6f6f6;
+    display: inline-block;
+    border-radius: 5px;
+}
+
 .modelImage{
     position: relative;
 }
@@ -50,6 +61,16 @@
     top: 5px;
     right: 5px;
     padding: 5px;
+}
+
+.sidebarLoginBtn{
+    position: absolute;
+    color: #ff6085;
+    bottom: 20%;
+    right: 18%;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .topMenuContainer>p{
@@ -167,5 +188,10 @@
     }
 }
 
+@media only screen and (max-width:550px){
+    .nav-main{
+        height: 60px;
+    }
+}
 
 

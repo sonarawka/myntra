@@ -55,7 +55,7 @@ const Login = () => {
                 <img width="100%" src='https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/2023/2/7/59a76460-3a85-4d4b-b517-faef119c50551675792734635-offer-banner-200-600x240-code-_-MYNTRA200.jpg' alt=''/>
                 <div className={classes.loginDetails}>
                     <p><b>Login with Gmail</b></p>
-                    <button onClick={signin} className={classes.loginBtn}><img width="20px" src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg' alt='' />Login</button>
+                    <button onClick={signin} className={classes.loginBtn}><img width="20px" src='https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg' alt='' />&nbsp;Login</button>
                 </div>                
             </div>            
         </div>        
