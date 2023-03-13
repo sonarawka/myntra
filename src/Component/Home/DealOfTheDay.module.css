@@ -10,7 +10,8 @@
 
 .DealOfTheDayListItem{
     display: inline-block;
-    margin-right: 13px;
+    margin-left: 1px;
+    margin-right: 1px;
     width: 189px;
     height: 285px;
     background-size: 189px 285px;

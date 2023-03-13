@@ -1,4 +1,4 @@
-.BestOfBrandsListq{
+.BestOfBrandsList{
     margin: 0 auto;
     width: 98vw;
     overflow: auto;
@@ -7,12 +7,15 @@
 
 .BestOfBrandsListItem{
     display: inline-block;
-    margin-right: 3px;
+    margin-left: 2px;
+    margin-right: 2px;
     width: 184.9px;
     height: 235px;
+    background-size: 184.9px 235px;
+
 }
 
-.BestOfBrandsListq::-webkit-scrollbar {
+.BestOfBrandsList::-webkit-scrollbar {
     display: none;
 }
 
@@ -21,15 +24,16 @@
 @media screen and (max-width:850){
     .BestOfBrandsListItem{
         width: 120px;
-        height: 200px;
+        height: 153px;
+        background-size: 120px 153px;
     }
 }
 
-.BestOfBrandsList{
+.BestOfBrandsListq{
     margin-top: 100px;
 }
 
-.BestOfBrandsList>img{
+.BestOfBrandsListq>img{
     
     width: 184.9px;
     padding-right: 5px;

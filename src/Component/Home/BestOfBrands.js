@@ -22,7 +22,7 @@ const BestOfBrands = () => {
   return (
     <div>
         <h4 className={sectionTitle.SectionTitle}>BEST OF MYNTRA EXCLUSIVE BRANDS</h4>
-        <div className={classes.BestOfBrandsListq}>
+        <div className={classes.BestOfBrandsList}>
             <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img1})`}}></div>
             <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img2})`}}></div>
             <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img3})`}}></div>
@@ -33,14 +33,14 @@ const BestOfBrands = () => {
             <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img8})`}}></div>
         </div>
         <div className={classes.BestOfBrandsList}>
-            <img src={img9} alt=''/>
-            <img src={img10} alt=''/>
-            <img src={img11} alt=''/>
-            <img src={img12} alt=''/>
-            <img src={img13} alt=''/>
-            <img src={img14} alt=''/>
-            <img src={img15} alt=''/>
-            <img src={img16} alt=''/>
+        <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img9})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img10})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img11})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img12})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img13})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img14})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img15})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img16})`}}></div>
         </div>
     </div>
   )
