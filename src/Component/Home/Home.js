@@ -28,11 +28,11 @@ const Home = () => {
             <div onClick={()=>navigate('/productItems')}>
             <DealOfTheDay/>
             <BestOfBrands/>
-            <TopPicks/>
-            <CategoriesToBag/>
+            {/* <TopPicks/>
+            <CategoriesToBag/> */}
             </div>
 
-            <Footer/>
+            {/* <Footer/> */}
         </div>
     </div>
   )

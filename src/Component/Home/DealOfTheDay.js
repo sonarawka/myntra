@@ -15,14 +15,16 @@ const DealOfTheDay = () => {
     <div className={classes.DealOfTheDayMain}>
         <h4 className={sectionTitle.SectionTitle}>DEAL OF THE DAY</h4>
         <div className={classes.DealOfTheDayList}>
-            <img src={img1} alt=''/>
-            <img src={img2} alt=''/>
-            <img src={img3} alt=''/>
-            <img src={img4} alt=''/>
-            <img src={img5} alt=''/>
-            <img src={img6} alt=''/>
-            <img src={img7} alt=''/>
-            <img src={img8} alt=''/>
+            <div className={` row ${classes.DealOfTheDayListItem}`} style={{backgroundImage:`url(${img1})`}}></div>
+            <div className={` row ${classes.DealOfTheDayListItem}`} style={{backgroundImage:`url(${img2})`}}></div>
+            <div className={` row ${classes.DealOfTheDayListItem}`} style={{backgroundImage:`url(${img3})`}}></div>
+            <div className={` row ${classes.DealOfTheDayListItem}`} style={{backgroundImage:`url(${img4})`}}></div>
+            <div className={` row ${classes.DealOfTheDayListItem}`} style={{backgroundImage:`url(${img5})`}}></div>
+            <div className={` row ${classes.DealOfTheDayListItem}`} style={{backgroundImage:`url(${img6})`}}></div>
+            <div className={` row ${classes.DealOfTheDayListItem}`} style={{backgroundImage:`url(${img7})`}}></div>
+            <div className={` row ${classes.DealOfTheDayListItem}`} style={{backgroundImage:`url(${img8})`}}></div>
+            
+           
         </div>
     </div>
   )

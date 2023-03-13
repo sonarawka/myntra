@@ -1,4 +1,36 @@
+.BestOfBrandsListq{
+    margin: 0 auto;
+    width: 98vw;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.BestOfBrandsListItem{
+    display: inline-block;
+    margin-right: 3px;
+    width: 184.9px;
+    height: 235px;
+}
+
+.BestOfBrandsListq::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+@media screen and (max-width:850){
+    .BestOfBrandsListItem{
+        width: 120px;
+        height: 200px;
+    }
+}
+
+.BestOfBrandsList{
+    margin-top: 100px;
+}
+
 .BestOfBrandsList>img{
+    
     width: 184.9px;
     padding-right: 5px;
 }

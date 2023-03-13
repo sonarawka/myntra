@@ -22,15 +22,15 @@ const BestOfBrands = () => {
   return (
     <div>
         <h4 className={sectionTitle.SectionTitle}>BEST OF MYNTRA EXCLUSIVE BRANDS</h4>
-        <div className={classes.BestOfBrandsList}>
-            <img src={img1} alt=''/>
-            <img src={img2} alt=''/>
-            <img src={img3} alt=''/>
-            <img src={img4} alt=''/>
-            <img src={img5} alt=''/>
-            <img src={img6} alt=''/>
-            <img src={img7} alt=''/>
-            <img src={img8} alt=''/>
+        <div className={classes.BestOfBrandsListq}>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img1})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img2})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img3})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img4})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img5})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img6})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img7})`}}></div>
+            <div className={` row ${classes.BestOfBrandsListItem}`} style={{backgroundImage:`url(${img8})`}}></div>
         </div>
         <div className={classes.BestOfBrandsList}>
             <img src={img9} alt=''/>

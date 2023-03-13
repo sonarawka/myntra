@@ -1,13 +1,34 @@
-.DealOfTheDayList{
-    display: flex;
 
-
-}
 .DealOfTheDayMain{
+}
+.DealOfTheDayList{
+    margin: 0 auto;
+    width: 98vw;
+    overflow: auto;
     white-space: nowrap;
-    overflow: scroll;
 }
-.DealOfTheDayList>img{
-    width: 189.9px;
+
+.DealOfTheDayListItem{
     display: inline-block;
+    margin-right: 13px;
+    width: 189px;
+    height: 285px;
+    background-size: 189px 285px;
 }
+
+.DealOfTheDayList::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+@media screen and (max-width:850){
+    .DealOfTheDayListItem{
+        width: 110px;
+        height: 190px;
+        background-size: 110px 190px;
+    }
+}
+
+
+
