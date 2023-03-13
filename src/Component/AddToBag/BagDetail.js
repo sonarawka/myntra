@@ -2,8 +2,7 @@ import React from 'react'
 import classes from './Bag.module.css'
 import { useSelector } from 'react-redux';
 import BagItems from './BagItems';
-import { Link, useNavigate } from 'react-router-dom';
-import WishList from '../WishList';
+import { useNavigate } from 'react-router-dom';
 
 const host = process.env.REACT_APP_HOST
 
