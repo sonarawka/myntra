@@ -32,8 +32,8 @@ const ProductItems = () => {
             <p>Home / <span className={classes.headerTitle}>Women Accessories</span></p>
             <p><b>Women Accessories</b> - {productItems && productItems.total_results} items</p>
         </div>
-        <div className='row'>
-            <div className='col-md-2 '>
+        <div className='d-flex'>
+            <div className={classes.filter}>
                 <p><b>FILTERS</b></p>
                 
                 <p><b>CATEGORIES</b></p>
@@ -90,7 +90,7 @@ const ProductItems = () => {
 
 
             </div>
-            <div className='col-md-10 mw-100'>
+            <div className='row'>
                 <div className='d-flex justify-content-between '>
                     <div className={classes.subHeader}>
                         <p>Bundles</p>

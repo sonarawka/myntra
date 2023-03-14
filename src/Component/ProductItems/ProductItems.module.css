@@ -12,6 +12,11 @@
     font-weight: 700;
 }
 
+.filter{
+    flex-shrink: 0;
+    width:240px;
+}
+
 .filterHeadings{
     padding-top: 20px;
 }
@@ -25,5 +30,11 @@
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+}
+
+@media screen and (max-width:650px) {
+    .filter{
+        display: none;
+    }
 }
 
