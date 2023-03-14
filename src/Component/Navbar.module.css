@@ -42,14 +42,44 @@
 }
 
 .loggedInModelImage{
+    padding: 20px;
     height: 128px;
     background-color: #3f3947;
+}
+
+.profileMain{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.profileIcon>button{
+    background-color: white;
 }
 
 .profileIcon{
     background-color: #f6f6f6;
     display: inline-block;
     border-radius: 5px;
+    padding: 7px;
+}
+
+.userDetail{
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 16px;
+    padding-top: 10px;
+}
+
+.userDetail>p{
+    font-weight: 700;
+}
+
+.logout{
+    color: #ff6085;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .modelImage{
