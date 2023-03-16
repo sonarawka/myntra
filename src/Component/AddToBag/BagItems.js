@@ -18,7 +18,7 @@ const BagItems = (props) => {
   return (
     <div className={classes.bagDiv}>
                 <div className={classes.bagImgDiv}>
-                    <img src={img} alt='' />
+                    <img src={`https://wsrv.nl/?url=${img}`} alt='' />
                 </div>
                 <div>
                     <p className={classes.fW}>{title.split(" ")[0]+ ' ' + title.split(" ")[1]}</p>

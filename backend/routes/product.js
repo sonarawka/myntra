@@ -31,7 +31,7 @@ router.get('/getProducts/:page', async(req, res)=>{
     try {
         
         const products=await Products.find({}).skip(skip).limit(30)
-        const count = products.length
+        const count = await Products.find({}).countDocuments({})
 
     res.json({products,total_results:count, total_pages:Math.ceil(count/30)})}
     catch (error){
