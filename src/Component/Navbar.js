@@ -63,6 +63,8 @@ const Navbar = () => {
             </div>
             <hr />
             <div className={classes.bottomMenuContainer}>
+              {loggedIn.isloggedIn && <div>Account </div>}
+              {loggedIn.isloggedIn && <div onClick={()=>navigate('/orders')}>Orders </div>}
               <div>Myntra Studio  <span className={classes.naviLevelNewTagRact}>NEW</span></div>
               <div>Myntra Mall <span className={classes.naviLevelNewTagRact}>NEW</span></div>
               <div>Myntra Insider </div>

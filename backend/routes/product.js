@@ -34,7 +34,8 @@ router.get('/getProducts/:page', async(req, res)=>{
 
     res.json({products,total_results:count, total_pages:Math.ceil(count/30)})}
     catch (error){
-        res.status(500).send("Some error is there!")
+        res.status(500).send(`Some error is there! ${error.message}`)
+        console.log(error.message)
     }
 })
 

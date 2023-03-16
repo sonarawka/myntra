@@ -21,7 +21,7 @@ const Product = (props) => {
 
   
   return (
-    <div className={`card ${classes.productMain} col-md-3 m-3`} style={{width: "210px"}}>
+    <div className={`card ${classes.productMain} col-md-3`} style={{width: "210px"}}>
       <img src={img[0]} className="card-img-top" 
       onError={({ currentTarget }) => {
         currentTarget.onerror = null; // prevents looping
