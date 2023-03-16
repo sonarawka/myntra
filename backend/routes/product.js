@@ -9,7 +9,7 @@ router.post('/addProducts', async(req, res)=>{
         const products = new Products({
             name, subcategory, price, discountPrice, image, rate, count, brand, specifications, description
         })
-        await products.save()
+        await products.save() 
 
     });
     res.json({success:"done"})}
@@ -34,7 +34,7 @@ router.get('/getProducts/:page', async(req, res)=>{
 
     res.json({products,total_results:count, total_pages:Math.ceil(count/30)})}
     catch (error){
-        res.status(500).send(`Some error is there! ${error.message}`)
+        res.status(500).send(`Some error is there!... ${error.message}`)
         console.log(error.message)
     }
 })
