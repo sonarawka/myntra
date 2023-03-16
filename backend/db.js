@@ -6,6 +6,7 @@ const mongooseUrl = `mongodb+srv://sonarawka:${password}@cluster0.23ixr.mongodb.
 
 const connectToMongo = ()=>{
     mongoose.connect(mongooseUrl, ()=>{
+        mongoose.set("strictQuery", true);
         console.log("Connected to mongodb successfully!")
     })
 } 
