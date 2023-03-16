@@ -5,7 +5,10 @@ const app = express();
 db();
 require('dotenv').config();
 const PORT = process.env.PORT || 4242;
-
+app.get('/api/healthcheck',(req,res)=>{
+  console.log("Health Check Success 200 OK")
+  res.send({  healthCheck: "success 200 OK"  })
+})
 app.use(cors())
 app.use(express.json({verify: (req,res,buf) => { req.rawBody = buf }}));
 
