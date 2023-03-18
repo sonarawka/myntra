@@ -4,7 +4,7 @@ const cors = require('cors');
 const app = express();
 db();
 require('dotenv').config();
-const PORT = process.env.PORT || 4242;
+const PORT = 4242;
 
 app.use(cors())
 app.use(express.json({verify: (req,res,buf) => { req.rawBody = buf }}));

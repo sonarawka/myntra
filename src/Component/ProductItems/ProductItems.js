@@ -16,14 +16,14 @@ const ProductItems = () => {
         const response = await fetch(`${host}/api/products/getProducts/${pageNo}`);
 
         const data= await response.json();
-        setproductItems(data)
+        setproductItems({products:data.products,
+            total_results:data.products.length, total_pages:Math.ceil(data.products.length/30)})
       
       }
     useEffect(()=>{
         getProduct()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[pageNo])
- 
   return (
     <div>
         <Navbar/>

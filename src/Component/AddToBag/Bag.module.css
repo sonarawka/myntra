@@ -1,3 +1,22 @@
+.smallNavmain{
+    display: none;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 40px;
+    background-color: #f6f6f6;
+    z-index: 1;
+    height: 60px;
+}
+
+.ShopBag{
+    font-weight: 700;
+    padding-left: 8px;
+}
+
 .nav-main{
     position: fixed;
     top: 0;
@@ -134,3 +153,22 @@
     word-spacing: 2px;
     margin-top: 20px;
 }
+
+@media screen and (max-width:550px) {
+    .nav-main{
+        display: none;
+    }
+    .smallNavmain{
+        display: flex;
+    }
+    .bagMainDiv{
+        flex-direction: column;
+    }
+    .bagDiv{
+        width: 100%;
+    }
+    .summaryDiv{
+        width: 100%;
+    }
+}
+

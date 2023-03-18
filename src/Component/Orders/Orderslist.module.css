@@ -44,3 +44,16 @@
     column-gap: 14px;
     padding: 10px;
 }
+
+@media screen and (max-width:550px) {
+    .orderslistDiv{
+        width: 100%;
+        padding:10px 14px;
+        margin: 2px 0 12px 0;
+    }
+
+    .orderlistmain{
+    margin:80px 0 10px 0; 
+        width: 100%;
+    }
+}
