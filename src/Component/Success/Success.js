@@ -18,8 +18,8 @@ const Success = () => {
               <h3>Order Confirmed</h3>
               <p style={{ textAlign: "center" }}>Your order is currently being processed. You will recieve an order confirmation email shortly with the expected delivery date for your items.</p>
             </div>
-            <div className='col-md-5'>
-              <p style={{ textAlign: "center" }}>Order details</p>
+            <div className={`col-md-5 ${classes.orderDetailsMain}`}>
+              <p className={classes.orderDetails}>Order details</p>
               <p>Payment Mode</p>
               <p>Online</p>
             </div>

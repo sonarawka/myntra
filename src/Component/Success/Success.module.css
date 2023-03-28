@@ -65,6 +65,13 @@
     font-weight: 700;
 }
 
+.orderDetails{
+    text-align:center;
+    font-size:20px;
+}
+
+
+
 .orderBtn{
     border: none;
     padding: 10px 60px;
@@ -73,4 +80,31 @@
     font-weight: 700;
     border-radius: 5px;
 
+}
+
+@media only screen and (max-width:770px) {
+    .orderDesc{
+        border-right:none;
+    }
+    .successCard{
+        height: 300px;
+        width: 600px;
+    }
+    .orderDetailsMain p{
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    
+    .successCard{
+        height: 400px;
+        width: 300px;
+    }
+   .nav-main{
+        padding: 18px;
+   }
+   .logoDiv b{
+    display: none;
+   }
 }

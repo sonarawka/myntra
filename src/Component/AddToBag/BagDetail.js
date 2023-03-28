@@ -22,7 +22,7 @@ const BagDetail = () => {
             body:JSON.stringify({items:items, email:"sona@gmail.com"})
         })
         const body = await result.json()
-
+console.log(body)
         window.location.href = body.url
 
     }
